@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="http://localhost/bugcollection">
+	<Match>
+		<Class name="com.nioos.leanspooler.servlets.AddPrintJobServlet" />
+		<Field name="printJobsDao"/>
+		<Bug pattern="SE_TRANSIENT_FIELD_NOT_RESTORED"/>
+	</Match>
+	<Match>
+		<Class name="com.nioos.leanspooler.bdd.AddBehaviorSteps" />
+		<Method name="afterStories"/>
+		<Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+	</Match>
+	<Match>
+		<Class name="com.nioos.leanspooler.bdd.AddBehaviorSteps" />
+		<Method name="thenTheDatabaseContainsTheNewPrintJob"/>
+		<Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+	</Match>
+	<Match>
+		<Class name="com.nioos.leanspooler.bdd.AddBehaviorSteps" />
+		<Method name="whenTheCommandReturns"/>
+		<Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+	</Match>
+</FindBugsFilter>
