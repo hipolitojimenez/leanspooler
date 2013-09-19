@@ -3,6 +3,7 @@ package com.nioos.leanspooler.servlets;
 
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 
 import com.nioos.leanspool.dao.DaoException;
-import com.nioos.leanspool.gwt.shared.PrintJobModel;
 import com.nioos.leanspool.printjobs.PrintJobModelImpl;
 import com.nioos.leanspool.printjobs.PrintJobsDao;
 import com.nioos.leanspool.printjobs.PrintJobsException;
@@ -62,7 +62,8 @@ public class AddPrintJobServlet extends HttpServlet {
 				final HttpServletResponse response)
 			throws ServletException, IOException {
 		final ServletInputStream servletInputStream = request.getInputStream();
-		final PrintJobModel printJobModel = new PrintJobModelImpl(); // NOPMD
+		final PrintJobModelImpl printJobModel =
+			new PrintJobModelImpl();
 		final int size = request.getContentLength();
 		if (size > 0) {
 			final byte[] buffer = new byte[size];
